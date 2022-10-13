@@ -3,10 +3,14 @@ package de.deminosa.rpg.system.data;
 public class Data {
     
     private final String key;
-    private final Object val;
+    private Object val;
     
     public Data(String key, Object val) {
         this.key = key; 
+        this.val = val;
+    }
+
+    public void setVal(Object val) {
         this.val = val;
     }
 

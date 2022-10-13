@@ -3,19 +3,23 @@ package de.deminosa.rpg.system.data;
 import java.util.HashMap;
 
 public class DataPackage {
-    
-    private final HashMap<String, DataContainer> dataPackage;
+    private final HashMap<String, Data> dataMap;
 
     public DataPackage() {
-        this.dataPackage = new HashMap<String, DataContainer>();
+        this.dataMap = new HashMap<String, Data>();
     }
 
-    public void put(String key, DataContainer container) {
-        dataPackage.put(key, container);
+    public void put(String key, Data data) {
+        dataMap.put(key, data);
     }
 
-    public DataContainer getContainer(String key) {
-        return dataPackage.get(key);
+    public Data getData(String key) {
+        if (dataMap.get(key) == null) return new Data(key, null);
+        return dataMap.get(key);
     }
 
+    @Override
+    public String toString() {
+        return "DataPackage [dataMap=" + dataMap + "]";
+    }
 }
