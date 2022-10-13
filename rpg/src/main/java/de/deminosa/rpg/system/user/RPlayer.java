@@ -26,11 +26,11 @@ public class RPlayer extends User{
     }
  
     private void setup() {
-        changeValues(playerStats, "hp", 1);
-        
+        changeValue(playerStats, "hp", 1);
+
     }
     
-    private void changeValues(DataPackage package1, String key, Object val) {
+    private void changeValue(DataPackage package1, String key, Object val) {
         Data data = package1.getData(key);
         data.setVal(val);
         package1.put(key, data);
