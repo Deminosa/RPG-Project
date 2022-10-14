@@ -14,8 +14,17 @@ public class DataPackage {
     }
 
     public Data getData(String key) {
-        if (dataMap.get(key) == null) return new Data(key, null);
+        if (dataMap.get(key) == null) return new Data(null);
         return dataMap.get(key);
+    }
+
+    public void addData(String key, Object val) {
+        Data data = new Data(val);
+        put(key, data);
+    }
+
+    public HashMap<String, Data> getDataMap() {
+        return dataMap;
     }
 
     @Override
